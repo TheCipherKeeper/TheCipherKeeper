@@ -9,8 +9,7 @@ type Programming interface {
   Go()
   Python()
   SQL()
-  JS()
-  PHP()
+  TS()
 }
 
 type Language interface {
@@ -20,9 +19,10 @@ type Language interface {
 
 type CyberSecurity interface {
   Web()
-  ActiveDirectory()
-  MalwareDevelopment()
+  BlueTeam()
+  RedTeam()
   Network()
+  LLM()
 }
 
 type Skills interface {
@@ -35,6 +35,6 @@ type Skills interface {
 } 
 
 func main() {
-  var fu3fi Skills = p.NewEmployee()
+  var cipherKeeper Skills = p.NewEmployee()
 }
 ```
