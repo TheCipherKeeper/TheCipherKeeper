@@ -21,7 +21,6 @@ runs on your own Proxmox / K8s.
 |---|---|---|
 | 🎯 | [cybercity](https://github.com/TheCipherKeeper/cybercity) | Go core: event-sourced engine, network validator, K8s manifest renderer |
 | 🗺️ | [cybercity-data](https://github.com/TheCipherKeeper/cybercity-data) | 30 organizations, 95 services, decoy hosts in `network.yml` |
-| 📜 | [cybercity-scenarios](https://github.com/TheCipherKeeper/cybercity-scenarios) | Exercise packages: election interference, hospital ransomware, grid blackout |
 | 🖥️ | [cybercity-ui](https://github.com/TheCipherKeeper/cybercity-ui) | 2D city map, event timeline, red/blue dashboards |
 | 📡 | [cybercity-agents](https://github.com/TheCipherKeeper/cybercity-agents) | Log/SIEM collectors inside city segments |
 | 🏗️ | [cybercity-blueprints](https://github.com/TheCipherKeeper/cybercity-blueprints) | Proxmox VM provisioning (Ansible/Terraform) |
