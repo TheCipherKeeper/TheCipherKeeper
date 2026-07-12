@@ -1,60 +1,66 @@
-## Hi, I'm TheCipherKeeper
+# Hi, I'm TheCipherKeeper
 
-I build tools and training grounds for offensive security and incident
-response. Everything runs on-prem, in the open — no SaaS, no phone-home. Fork
-it, break it, learn from it.
+I build **reproducible, self-hosted systems for cyber training and incident
+analysis** — with explicit trust boundaries, observable behavior, and automation
+that can be verified instead of trusted blindly.
 
-- 🛠️ Currently building **[CyberCity](#cybercity)** — a digital twin of a
-  city's IT/OT infrastructure (hospitals, power grid, transit, banks, courts)
-  as a cyber-range for red/blue team exercises.
-- 📄 Résumé / CV: [thecipherkeeper.github.io](https://thecipherkeeper.github.io)
-- ✉️ Reach me via GitHub Issues on any of my projects
+My current focus is [CyberCity](https://github.com/TheCipherKeeper/cybercity):
+a digital twin of urban IT/OT infrastructure for red/blue team exercises.
+
+## Featured work
+
+### [CyberCity](https://github.com/TheCipherKeeper/cybercity)
+
+A modular cyber range where a city is modeled as code: organizations, networks,
+services, reachability, scenarios, and vulnerabilities. The runtime records a
+trusted event stream and a causal graph, so an exercise can be observed,
+scored, replayed, and explained.
+
+- Designed for private Proxmox and Kubernetes infrastructure
+- Event-driven core with topological and causal graphs
+- Out-of-band observation across trusted and untrusted network planes
+- Declarative scenarios and deterministic builds
+- No required SaaS or external telemetry
+
+Start with the
+[project overview](https://github.com/TheCipherKeeper/cybercity#readme) or open
+the
+[canonical system composition](https://github.com/TheCipherKeeper/cybercity/blob/main/COMPOSITION.md)
+for architecture, boundaries, contracts, and current status.
+
+### [ADDM](https://github.com/TheCipherKeeper/addm)
+
+An agent-driven development methodology for projects built by one person and
+software agents. It defines a reproducible path from an ordered backlog to
+implementation, independent review, CI evidence, squash merge, and a verified
+test deployment.
+
+## Engineering principles
+
+- **Evidence over confidence.** Tests, validators, CI, and observable behavior
+  decide whether a change works.
+- **One fact, one authority.** Contracts and architectural decisions have a
+  canonical home instead of drifting between documents.
+- **Determinism matters.** Fixed inputs, seeded generation, pinned methodology,
+  and replayable events make failures explainable.
+- **Trust boundaries are structural.** Untrusted workloads cannot become their
+  own source of truth.
+- **AI is an implementer, not a product owner.** Agents can choose technical
+  details; product intent and system boundaries remain human decisions.
+- **Self-hosted by design.** Projects should remain useful without mandatory
+  cloud services or phone-home telemetry.
+
+## Tools I reach for
+
+`Go` · `Rust` · `Python` · `TypeScript` · `PostgreSQL` · `Kafka / Redpanda` ·
+`Kubernetes` · `Cilium` · `Proxmox` · `Terraform` · `Docker` · `GitHub Actions`
+
+## Elsewhere
+
+- Portfolio and résumé: [thecipherkeeper.github.io](https://thecipherkeeper.github.io)
+- Project discussions: open an issue in the relevant repository
 
 ---
 
-### CyberCity
-
-A modular cyber-range: each repository is one composable layer of the same
-system — same network model, different concerns. Runs on your own
-Proxmox / K8s; no SaaS, nothing phones home.
-
-| | Repository | Layer |
-|---|---|---|
-| 🏙️ | [cybercity](https://github.com/TheCipherKeeper/cybercity) | **Cover** — showcase + the single canonical composition (`COMPOSITION.md`) |
-| 🗂️ | [cybercity-data](https://github.com/TheCipherKeeper/cybercity-data) | **Data** (Python) — declarative model: 46 orgs / 263 services / 464 links, validator, builder, IP allocator, scenario authoring |
-| ⚙️ | [cybercity-engine](https://github.com/TheCipherKeeper/cybercity-engine) | **Runtime** (Go) — event-driven core, two graphs (topological + causal), tick loop, scoring, replay |
-| 🎛️ | [cybercity-manage](https://github.com/TheCipherKeeper/cybercity-manage) | **Control plane** (Python) — provisioning, reset/rollback (ZFS), segment isolation, quotas; places the collector |
-| 📡 | [cybercity-collector](https://github.com/TheCipherKeeper/cybercity-collector) | **Collector** (Rust) — out-of-band, per-host, read-only telemetry; signed events to the engine over Kafka |
-| 🖥️ | [cybercity-ui](https://github.com/TheCipherKeeper/cybercity-ui) | **UI** (TypeScript) — interactive service map, event timeline, red/blue dashboards |
-
-Start here for the big picture — composition, contracts, and the trust
-boundary in one place:
-[`cybercity/COMPOSITION.md`](https://github.com/TheCipherKeeper/cybercity/blob/main/COMPOSITION.md).
-
----
-
-### Tech
-
-`Go` · `Rust` · `Python` · `TypeScript` · `Kubernetes` · `Cilium` · `PostgreSQL`
-· `Proxmox` · `Ansible` · `Terraform` · `YAML` as a first-class citizen
-
----
-
-### How I work with AI
-
-- **LLM is a co-pilot, not the boss.** It drafts YAML and code; it doesn't make
-  architectural calls.
-- **Validators are the contract.** Every AI-generated change runs the repo's
-  gate — `ruff`/`mypy`/`pytest` (data), `go test`/`go vet` (engine),
-  `cargo test` (collector).
-- **One entity per iteration.** No "the whole city at once" generations — one
-  organization, one service, one link, then validate.
-- **Reproducibility.** Deterministic allocation (`--seed`), fixed key order,
-  replayable scenarios.
-
----
-
-<sub>
-🛡️ Public projects, public process. Everything here is a portfolio piece —
-use, fork, break, learn. Issues and PRs welcome on the active repos.
-</sub>
+<sub>Public projects, public process. Explore the architecture, run the checks,
+break things responsibly, and share what you learn.</sub>
